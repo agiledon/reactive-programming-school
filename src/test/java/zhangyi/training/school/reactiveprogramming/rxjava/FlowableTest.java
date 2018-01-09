@@ -1,6 +1,5 @@
 package zhangyi.training.school.reactiveprogramming.rxjava;
 
-import akka.stream.javadsl.JavaFlowSupport;
 import io.reactivex.Flowable;
 import io.reactivex.schedulers.Schedulers;
 import org.junit.Test;
@@ -10,7 +9,7 @@ import zhangyi.training.school.reactiveprogramming.rxjava.service.MockErpService
 import zhangyi.training.school.reactiveprogramming.rxjava.service.MockWareHouseService;
 import zhangyi.training.school.reactiveprogramming.rxjava.service.WareHouseService;
 
-public class RxJavaFlowableTest {
+public class FlowableTest {
 
     @Test
     public void should_run_in_background_with_non_blocking() throws InterruptedException {
