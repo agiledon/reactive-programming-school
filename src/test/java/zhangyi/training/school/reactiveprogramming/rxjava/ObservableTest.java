@@ -35,4 +35,24 @@ public class ObservableTest {
         Observable<String> c = Observable.merge(a, b);
         c.subscribe(System.out::println);
     }
+
+    @Test
+    public void should_be_lazy() {
+        Observable<Integer> ints = Observable.create(s -> {
+            log("Create");
+            s.onNext(1);
+            s.onNext(2);
+            s.onNext(3);
+            s.onComplete();
+            log("Completed");
+        });
+
+        log("Starting");
+        ints.subscribe(i -> log(i));
+        log("Exit");
+    }
+
+    private static void log(Object msg) {
+        System.out.println(Thread.currentThread().getName() + ": " + msg);
+    }
 }
