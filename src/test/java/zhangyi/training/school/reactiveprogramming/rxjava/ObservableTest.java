@@ -3,6 +3,8 @@ package zhangyi.training.school.reactiveprogramming.rxjava;
 import io.reactivex.Observable;
 import org.junit.Test;
 
+import static zhangyi.training.school.reactiveprogramming.rxjava.utils.Logger.log;
+
 public class ObservableTest {
     @Test
     public void should_execute_synchronized() {
@@ -50,9 +52,5 @@ public class ObservableTest {
         log("Starting");
         ints.subscribe(i -> log(i));
         log("Exit");
-    }
-
-    private static void log(Object msg) {
-        System.out.println(Thread.currentThread().getName() + ": " + msg);
     }
 }
