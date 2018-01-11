@@ -1,13 +1,20 @@
 package zhangyi.training.school.reactiveprogramming.rxjava;
 
 import io.reactivex.Flowable;
+import io.reactivex.Maybe;
+import io.reactivex.observers.TestObserver;
 import io.reactivex.schedulers.Schedulers;
+import io.reactivex.schedulers.TestScheduler;
+import io.reactivex.subjects.PublishSubject;
 import org.junit.Test;
 import zhangyi.training.school.reactiveprogramming.rxjava.domain.Inventory;
 import zhangyi.training.school.reactiveprogramming.rxjava.service.ErpService;
 import zhangyi.training.school.reactiveprogramming.rxjava.service.MockErpService;
 import zhangyi.training.school.reactiveprogramming.rxjava.service.MockWareHouseService;
 import zhangyi.training.school.reactiveprogramming.rxjava.service.WareHouseService;
+
+import java.sql.Time;
+import java.util.concurrent.TimeUnit;
 
 public class FlowableTest {
 
@@ -65,5 +72,36 @@ public class FlowableTest {
                 .map(demand -> "Item " + inventory.getName() + " has demand " + demand)
         )
         .subscribe(System.out::println);
+    }
+
+    @Test
+    public void should_be_empty_or_single_element_using_Maybe() {
+        Maybe.just(1)
+                .map(v -> v + 1)
+                .filter(v -> v == 1)
+                .defaultIfEmpty(2)
+                .test()
+                .assertResult(2);
+    }
+
+    @Test
+    public void test_using_TestScheduler() {
+        TestScheduler scheduler = new TestScheduler();
+
+        PublishSubject<Integer> ps = PublishSubject.create();
+
+        TestObserver<Integer> ts = ps.delay(1000, TimeUnit.MILLISECONDS, scheduler).test();
+
+        ts.assertEmpty();
+
+        ps.onNext(1);
+
+        scheduler.advanceTimeBy(999, TimeUnit.MILLISECONDS);
+
+        ts.assertEmpty();
+
+        scheduler.advanceTimeBy(1, TimeUnit.MILLISECONDS);
+
+        ts.assertValue(1);
     }
 }
