@@ -2,7 +2,12 @@ package zhangyi.training.school.reactiveprogramming.rxjava;
 
 import io.reactivex.Observable;
 import org.junit.Test;
+import org.omg.CORBA.Object;
 
+import java.util.concurrent.TimeUnit;
+
+import static io.reactivex.Observable.interval;
+import static java.util.concurrent.TimeUnit.MILLISECONDS;
 import static zhangyi.training.school.reactiveprogramming.rxjava.utils.Logger.log;
 
 public class ObservableTest {
@@ -66,4 +71,40 @@ public class ObservableTest {
                 .filter(s -> s.length() < 4)
                 .subscribe(s -> System.out.println("D: " + s));
     }
+
+    @Test
+    public void calculate_cartesian_product() {
+        Observable<Integer> oneToEight = Observable.range(1, 8);
+        Observable<String> ranks = oneToEight.map(i -> i.toString());
+        Observable<String> files = oneToEight
+                .map(x -> 'a' + x - 1)
+                .map(ascii -> (char) ascii.intValue())
+                .map(ch -> Character.toString(ch));
+
+        Observable<String> square = files.flatMap(file -> ranks.map(rank -> file + rank));
+        square.subscribe(System.out::println);
+    }
+
+    @Test
+    public void using_zip() throws InterruptedException {
+        Observable<Long> red = interval(10, MILLISECONDS);
+        Observable<Long> green = interval(100, MILLISECONDS);
+        Observable.zip(
+                red.timestamp(),
+                green.timestamp(),
+                (r, g) -> r.time() - g.time()
+        ).subscribe(System.out::println);
+    }
+
+    @Test
+    public void should_use_combineLatest() throws InterruptedException {
+        Observable.combineLatest(
+                interval(17, MILLISECONDS).map(x -> "S" + x),
+                interval(10, MILLISECONDS).map(x -> "F" + x),
+                (s, f) -> f + ":" + s
+        ).forEach(System.out::println);
+
+        Thread.sleep(100);
+    }
+
 }
