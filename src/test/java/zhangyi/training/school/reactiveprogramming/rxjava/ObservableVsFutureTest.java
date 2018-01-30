@@ -11,14 +11,11 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
+import java.util.concurrent.*;
 
 public class ObservableVsFutureTest {
 
-    public static final int SIZE = 10000000;
+    public static final int SIZE = 1000000;
 
     @Test
     //it take almost 13821

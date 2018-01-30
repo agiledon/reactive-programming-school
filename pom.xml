@@ -25,11 +25,26 @@
             <artifactId>akka-stream_2.11</artifactId>
             <version>2.5.8</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/io.reactivex.rxjava2/rxjava -->
         <dependency>
             <groupId>io.reactivex.rxjava2</groupId>
             <artifactId>rxjava</artifactId>
             <version>2.1.8</version>
+        </dependency>
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-all</artifactId>
+            <version>4.1.20.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>io.reactivex</groupId>
+            <artifactId>rxnetty</artifactId>
+            <version>0.5.1</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/io.reactivex/rxnetty-tcp -->
+        <dependency>
+            <groupId>io.reactivex</groupId>
+            <artifactId>rxnetty-tcp</artifactId>
+            <version>0.5.2</version>
         </dependency>
 
         <dependency>
