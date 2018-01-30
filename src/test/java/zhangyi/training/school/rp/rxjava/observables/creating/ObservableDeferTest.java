@@ -11,7 +11,7 @@ import rx.Observable;
  * Defer it will wait to create the observable with the value when we subscribe our observer.
  * Basically create this Observable that wrap the observable that we want to create only when we subscribe to the observable.
  */
-public class ObservableDefer {
+public class ObservableDeferTest {
 
 
     private String value = "none";

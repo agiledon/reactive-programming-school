@@ -13,7 +13,7 @@ import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
 
 
-public class ObservableInterval {
+public class ObservableIntervalTest {
 
     /**
      * Since interval work asynchronously you will have to use TestSubscriber class to wait a period of time

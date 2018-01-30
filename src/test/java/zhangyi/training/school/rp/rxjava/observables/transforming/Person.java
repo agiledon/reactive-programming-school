@@ -1,9 +1,9 @@
 package zhangyi.training.school.rp.rxjava.observables.transforming;
 
 public final class Person implements Cloneable {
-    String name;
-    Integer age;
-    String sex;
+     String name;
+     Integer age;
+     String sex;
 
     public Person(String name, Integer age, String sex) {
         this.name = name;

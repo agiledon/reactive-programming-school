@@ -5,7 +5,7 @@ import rx.Observable;
 
 import java.util.Arrays;
 
-public class ObservableCreate {
+public class ObservableCreateTest {
 
 
     /**

@@ -7,6 +7,7 @@ package zhangyi.training.school.rp.rxjava;/*                                    
 \*                                                                      */
 
 import io.reactivex.Observable;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -18,6 +19,7 @@ public class ObservableVsFutureTest {
     public static final int SIZE = 1000000;
 
     @Test
+    @Ignore
     //it take almost 13821
     public void access_large_list_via_future() throws ExecutionException, InterruptedException {
         ExecutorService executorService = Executors.newSingleThreadExecutor();
@@ -26,6 +28,7 @@ public class ObservableVsFutureTest {
     }
 
     @Test
+    @Ignore
     //it take almost 4250
     public void access_large_list_via_observable() throws ExecutionException, InterruptedException {
         Observable<Integer> source = Observable.fromIterable(largeList(SIZE));

@@ -11,7 +11,7 @@ import rx.schedulers.Schedulers;
 import java.util.concurrent.TimeUnit;
 
 
-public class ObservableSubscription {
+public class ObservableSubscriptionTest {
 
     private String foo = "empty";
 

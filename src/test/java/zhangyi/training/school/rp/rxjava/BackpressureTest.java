@@ -4,10 +4,15 @@ import io.reactivex.Flowable;
 import io.reactivex.Observable;
 import io.reactivex.processors.PublishProcessor;
 import io.reactivex.schedulers.Schedulers;
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class BackpressureTest {
+
+    public static final int COUNT = 1_000_000;
+
     @Test
+    @Ignore
     public void should_test_publish_processor() throws InterruptedException {
         PublishProcessor<Integer> source = PublishProcessor.create();
 
@@ -15,7 +20,7 @@ public class BackpressureTest {
                 .observeOn(Schedulers.computation())
                 .subscribe(v -> compute(v), Throwable::printStackTrace);
 
-        for (int i = 0; i < 1_000_000; i++) {
+        for (int i = 0; i < COUNT; i++) {
             source.onNext(i);
         }
 
@@ -23,10 +28,11 @@ public class BackpressureTest {
     }
     
     @Test
+    @Ignore
     public void should_use_observable() throws InterruptedException {
         Observable
                 .create(e -> {
-                    for (int i = 0; i < 1_000_000_000; i++) {
+                    for (int i = 0; i < COUNT; i++) {
                         e.onNext(i);
                     }
                     e.onComplete();
@@ -38,8 +44,9 @@ public class BackpressureTest {
     }
 
     @Test
+    @Ignore
     public void should_use_flowable() throws InterruptedException {
-        Flowable.range(1, 1_000_000)
+        Flowable.range(1, COUNT)
                 .observeOn(Schedulers.computation())
                 .subscribe(v -> compute(v), Throwable::printStackTrace);
 
