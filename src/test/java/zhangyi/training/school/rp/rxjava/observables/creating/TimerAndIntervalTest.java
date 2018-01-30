@@ -1,4 +1,4 @@
-package zhangyi.training.school.rp.rxjava;/*                                                                      *\
+package zhangyi.training.school.rp.rxjava.observables.creating;/*                                                                      *\
 **                                                                      **
 **      __  __ _________ _____          ©Mort BI                        **
 **     |  \/  / () | () |_   _|         (c) 2015                        **
@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 
 import static zhangyi.training.school.rp.rxjava.utils.Logger.log;
 
-public class SchedulerTest {
+public class TimerAndIntervalTest {
     @Test
     public void should_wait_one_second() throws InterruptedException {
         Observable.timer(1, TimeUnit.SECONDS)

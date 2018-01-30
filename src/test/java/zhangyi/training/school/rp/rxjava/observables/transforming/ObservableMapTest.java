@@ -43,5 +43,5 @@ public class ObservableMapTest {
     public String getItemsApi(int page) {
         return "Items form page " + page;
     }
-    
+
 }

@@ -1,9 +1,10 @@
-package zhangyi.training.school.rp.rxjava.cocurrency;
+package zhangyi.training.school.rp.rxjava.observables.scheduler;
 
 
 import io.reactivex.Observable;
 import io.reactivex.schedulers.Schedulers;
 import org.junit.Test;
+import zhangyi.training.school.rp.rxjava.utils.Logging;
 
 public class SchedulerTest {
     @Test

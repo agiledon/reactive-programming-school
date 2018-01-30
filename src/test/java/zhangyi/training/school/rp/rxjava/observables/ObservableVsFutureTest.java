@@ -1,4 +1,4 @@
-package zhangyi.training.school.rp.rxjava;/*                                                                      *\
+package zhangyi.training.school.rp.rxjava.observables;/*                                                                      *\
 **                                                                      **
 **      __  __ _________ _____          ©Mort BI                        **
 **     |  \/  / () | () |_   _|         (c) 2015                        **

@@ -1,4 +1,4 @@
-package zhangyi.training.school.rp.rxjava.cocurrency;
+package zhangyi.training.school.rp.rxjava.utils;
 
 public class Logging {
     public static void log(Object label) {

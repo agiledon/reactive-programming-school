@@ -1,4 +1,4 @@
-package zhangyi.training.school.rp.rxjava;
+package zhangyi.training.school.rp.rxjava.flowables;
 
 import io.reactivex.Flowable;
 import io.reactivex.Observable;

@@ -1,4 +1,4 @@
-package zhangyi.training.school.rp.rxjava;
+package zhangyi.training.school.rp.rxjava.flowables;
 
 import io.reactivex.Flowable;
 import io.reactivex.Maybe;
@@ -51,7 +51,7 @@ public class FlowableTest {
     }
 
     @Test
-    public void should_map_numbers_in_parallel_via_easy_way() {
+    public void should_map_numbers_in_parallel_via_parallel() {
         Flowable.range(1, 10)
                 .parallel()
                 .runOn(Schedulers.computation())
@@ -84,7 +84,7 @@ public class FlowableTest {
     }
 
     @Test
-    public void test_using_TestScheduler() {
+    public void should_use_TestScheduler() {
         TestScheduler scheduler = new TestScheduler();
 
         PublishSubject<Integer> ps = PublishSubject.create();

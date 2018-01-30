@@ -1,4 +1,4 @@
-package zhangyi.training.school.rp.rxjava;
+package zhangyi.training.school.rp.rxjava.observables;
 
 import io.reactivex.Observable;
 import io.reactivex.observables.GroupedObservable;
@@ -131,7 +131,7 @@ public class ObservableTest {
     }
 
     @Test
-    public void using_zip() throws InterruptedException {
+    public void should_use_zip() throws InterruptedException {
         Observable<Long> red = interval(10, MILLISECONDS);
         Observable<Long> green = interval(100, MILLISECONDS);
         Observable.zip(
@@ -198,7 +198,7 @@ public class ObservableTest {
     }
 
     @Test
-    public void should_create_observable_immediatly_or_lazyly() {
+    public void should_create_observable_immediately_or_lazily() {
 
 //        Observable<Integer> eagerOb = Observable.fromIterable(getIntegers());
 
