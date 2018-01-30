@@ -1,4 +1,4 @@
-package zhangyi.training.school.rp.rxjava.utils;
+package zhangyi.training.school.rp.utils;
 
 public class Logging {
     public static void log(Object label) {

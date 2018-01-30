@@ -21,9 +21,7 @@ public class DemoMain {
 
         final Source<Integer, NotUsed> source = Source.range(1, 100);
         final Source<BigInteger, NotUsed> factorials = source.scan(BigInteger.ONE, (acc, next) -> acc.multiply(BigInteger.valueOf(next)));
-//        final CompletionStage<IOResult> result = factorials
-//                .map(num -> ByteString.fromString(num.toString() + "\n"))
-//                .runWith(FileIO.toFile(new File("factorizer.txt")), materializer);
+
 
         final CompletionStage<Done> done = factorials
                 .zipWith(Source.range(0, 99), (num, idx) -> String.format("%d! = %s", idx, num))

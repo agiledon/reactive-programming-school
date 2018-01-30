@@ -11,7 +11,6 @@ import java.util.concurrent.TimeUnit;
 
 import static io.reactivex.Observable.interval;
 import static java.util.concurrent.TimeUnit.MILLISECONDS;
-import static zhangyi.training.school.rp.rxjava.utils.Logger.log;
 
 public class ObservableTest {
     @Test
@@ -216,6 +215,14 @@ public class ObservableTest {
             l.add(i);
         }
         return l;
+    }
+
+    private void log(Object label) {
+        System.out.println(
+                System.currentTimeMillis() + "\t|" +
+                        Thread.currentThread().getName() + "\t|" +
+                        label
+        );
     }
 
 }

@@ -11,8 +11,6 @@ import org.junit.Test;
 
 import java.util.concurrent.TimeUnit;
 
-import static zhangyi.training.school.rp.rxjava.utils.Logger.log;
-
 public class TimerAndIntervalTest {
     @Test
     public void should_wait_one_second() throws InterruptedException {
@@ -26,5 +24,9 @@ public class TimerAndIntervalTest {
         Observable.interval(1_000_000 / 60, TimeUnit.MICROSECONDS)
                 .subscribe((Long i) -> log(i));
         Thread.sleep(10000);
+    }
+
+    private void log(Object msg) {
+        System.out.println(Thread.currentThread().getName() + ": " + msg);
     }
 }
