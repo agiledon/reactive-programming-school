@@ -1,4 +1,4 @@
-package zhangyi.training.school.rp.rxjava.transforming;
+package zhangyi.training.school.rp.rxjava.observables.transforming;
 
 public final class Person implements Cloneable {
     String name;

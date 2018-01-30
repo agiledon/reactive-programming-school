@@ -4,7 +4,7 @@ import org.junit.Test;
 import rx.Observable;
 import rx.Scheduler;
 import rx.schedulers.Schedulers;
-import zhangyi.training.school.rp.rxjava.transforming.Person;
+import zhangyi.training.school.rp.rxjava.observables.transforming.Person;
 
 import java.util.ArrayList;
 import java.util.Arrays;
