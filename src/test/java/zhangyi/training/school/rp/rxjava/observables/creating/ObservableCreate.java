@@ -5,10 +5,6 @@ import rx.Observable;
 
 import java.util.Arrays;
 
-
-/**
- * @author Pablo Perez
- */
 public class ObservableCreate {
 
 

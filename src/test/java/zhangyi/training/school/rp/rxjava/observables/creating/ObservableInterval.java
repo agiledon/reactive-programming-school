@@ -12,11 +12,7 @@ import rx.subjects.AsyncSubject;
 import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
 
-/**
- * Created by pabloperezgarcia on 10/3/16.
- * <p>
- * An Observable that emit an item every interval time specify.
- */
+
 public class ObservableInterval {
 
     /**

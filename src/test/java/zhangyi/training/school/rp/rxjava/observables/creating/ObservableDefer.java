@@ -5,10 +5,6 @@ import rx.Observable;
 
 
 /**
- * @author Pablo Perez
- */
-
-/**
  * Normally when you create an observable with just or create, The observable is created with the value that passed at that point,
  * and then once that a observer subscribe, the value it´s just passed through the pipeline.
  * Sometimes that´s not the desirable, since maybe we dont want to  create the observable at that point, only when an observer subscribe to it.
