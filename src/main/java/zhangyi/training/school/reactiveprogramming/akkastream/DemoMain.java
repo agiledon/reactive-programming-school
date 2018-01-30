@@ -1,10 +1,4 @@
-package zhangyi.training.school.reactiveprogramming.akkastream;/*                                                                      *\
-**                                                                      **
-**      __  __ _________ _____          ©Mort BI                        **
-**     |  \/  / () | () |_   _|         (c) 2015                        **
-**     |_|\/|_\____|_|\_\ |_|           http://www.bigeyedata.com       **
-**                                                                      **
-\*                                                                      */
+package zhangyi.training.school.reactiveprogramming.akkastream;
 
 import akka.Done;
 import akka.NotUsed;
