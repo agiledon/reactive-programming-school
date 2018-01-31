@@ -1,4 +1,4 @@
-这个Repository是学习响应式编程框架的demo实现。包括的框架为：
+学习响应式编程框架的demo实现。介绍的框架包括：
 * Java 8集合与Future
 * RxJava 2.x
 * Akka Streams
@@ -26,7 +26,7 @@ mvn test
 mvn package
 ```
 
-如果希望在打包时，忽略测试，则运行命名了：
+如果希望在打包时，忽略测试，可以运行命令：
 
 ```
 mvn package -DskipTests
