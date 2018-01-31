@@ -45,7 +45,7 @@ public class RunnableGraphTest {
                     builder.from(bcast).via(builder.add(f4)).toFanIn(merge);
 
                     return ClosedShape.getInstance();
-        }));
+                }));
 
         result.run(mat);
     }

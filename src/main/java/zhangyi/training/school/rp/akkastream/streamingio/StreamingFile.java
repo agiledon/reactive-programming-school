@@ -31,6 +31,6 @@ public class StreamingFile {
                 .map(l -> l.second() + ": " + l.first().utf8String())
                 .to(outputSink).run(mat);
 
-        System.out.println(ioResult.toCompletableFuture().get());
+        ioResult.thenAcceptAsync(l -> System.out.println(l), system.dispatcher());
     }
 }
