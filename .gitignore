@@ -4,3 +4,4 @@
 *.iws
 target/
 *.txt
+src/.DS_Store
