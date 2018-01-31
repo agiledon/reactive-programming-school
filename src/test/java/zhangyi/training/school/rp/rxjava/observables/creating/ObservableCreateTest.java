@@ -2,8 +2,11 @@ package zhangyi.training.school.rp.rxjava.observables.creating;
 
 import org.junit.Test;
 import rx.Observable;
+import scala.util.Right;
 
 import java.util.Arrays;
+import java.util.UUID;
+import java.util.concurrent.CompletableFuture;
 
 public class ObservableCreateTest {
 
@@ -53,6 +56,22 @@ public class ObservableCreateTest {
         Observable.create(observer -> observer.onNext(totalReadNumbers(numbers)))
                 .subscribe(n -> System.out.println(n + " in thread " + Thread.currentThread().getName()),
                            System.out::println);
+    }
+
+    @Test
+    public void should_create_observable_from_future() {
+        CompletableFuture<String> future = CompletableFuture.supplyAsync(this::getValue);
+        Observable.from(future)
+                .subscribe(System.out::println);
+    }
+
+    private String getValue() {
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return UUID.randomUUID().toString();
     }
 
     private Integer totalReadNumbers(Integer[] numbers) {
