@@ -24,7 +24,7 @@ public class ReplTcpClient {
         final Flow<ByteString, ByteString, NotUsed> repl = Flow.of(ByteString.class)
                 .via(Framing.delimiter(ByteString.fromString("\n"), 256, FramingTruncation.DISALLOW))
                 .map(text -> { System.out.println(text); return "next";})
-//                .map(elem -> readLine(">"))
+                .map(elem -> System.console().readLine(">"))
                 .via(replParser);
 
         connection.join(repl).run(mat);
