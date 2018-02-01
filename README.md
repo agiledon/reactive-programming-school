@@ -1,5 +1,5 @@
 学习响应式编程框架的demo实现。介绍的框架包括：
-* Java 8集合与Future
+* Java 8集合与Future操作
 * RxJava 2.x
 * Akka Streams
 
